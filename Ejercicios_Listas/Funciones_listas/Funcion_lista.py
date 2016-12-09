@@ -10,7 +10,7 @@ def crear_lista(lista):
     '''
     objeto=input("Introduzca un elemento a la cadena:")
     lista.append(objeto)
-    pregunta=input("Quieres meter mas elementos?") #Introduzca si o no#
+    pregunta=input("Quieres meter mas elementos?") #Introduzca si o no
     while pregunta=="Si" or pregunta=="si":
         elemento=input("Introduzca otro elemento:")
         lista.append(elemento)
@@ -22,15 +22,12 @@ A continuacion vamos a dividir la lista en pacientes, fase en la que se encuentr
 '''
 def dividir_lista(lista):
     id_paciente=lista[0]
-    return id_paciente
-    print(id_paciente)
     fase=lista[1]
-    return fase
-    print(fase)
-    temperaturas=lista[2:5]
-    return temperaturas
-    print(temperaturas)
+    temperaturas=lista[2:]
+    return id_paciente,fase,temperaturas
+    
 if __name__=="__main__":
     lista=[]
     print(crear_lista(lista))
-    print(dividir_lista(lista))
+    id_paciente,fase,temperaturas=dividir_lista(lista)
+    
