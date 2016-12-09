@@ -17,17 +17,23 @@ def crear_lista(lista):
         print(lista)
         pregunta=input("Quieres meter mas elementos?")
     return lista
-''' 
-A continuacion vamos a dividir la lista en pacientes, fase en la que se encuentra y temperaturas.
-'''
 def dividir_lista(lista):
+    ''' 
+    A continuacion vamos a dividir la lista en pacientes, fase en la que se encuentra y temperaturas.
+    '''
     id_paciente=lista[0]
     fase=lista[1]
     temperaturas=lista[2:]
     return id_paciente,fase,temperaturas
+def flotante(lista):
+    '''
+    Convertimos a continuacion los numeros de las temperaturas en flotantes.
+    '''
+    temperaturas=float(temperaturas)
     
 if __name__=="__main__":
     lista=[]
     print(crear_lista(lista))
     id_paciente,fase,temperaturas=dividir_lista(lista)
+    print(temperaturas)
     
