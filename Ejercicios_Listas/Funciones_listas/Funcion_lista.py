@@ -29,11 +29,22 @@ def flotante(lista):
     '''
     Convertimos a continuacion los numeros de las temperaturas en flotantes.
     '''
-    temperaturas=float(temperaturas)
-    
+    for n in range(2,len(lista)):
+        lista[n]=float(lista[n])
+    for n in range(3,len(lista)):
+        lista[n]=float(lista[n])
+    for n in range(4,len(lista)):
+        lista[n]=float(lista[n])
+        return lista
+def anadir_temperatura(lista):
+    '''
+    Esta funcion se utiliza para anadir una temperatura a la lista de temperaturas.
+    '''
+    elemento6=float(input("Introduce otro elemento para anadir a las temperaturas."))
+    temperaturas.appen(elemento6)
+    return temperaturas
 if __name__=="__main__":
     lista=[]
     print(crear_lista(lista))
     id_paciente,fase,temperaturas=dividir_lista(lista)
-    print(temperaturas)
     
