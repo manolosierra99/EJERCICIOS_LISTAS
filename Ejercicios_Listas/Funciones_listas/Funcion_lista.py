@@ -68,7 +68,13 @@ def cadena_texto(lastemperaturas):
     '''
     Esta funcion pasa las temperaturas a cadena de texto.
     '''
-    
+    for x in range(len(lastemperaturas)):
+        lastemperaturas[x]=str(lastemperaturas[x])
+    elemento=lastemperaturas[0]
+    for x in range(len(lastemperaturas)):
+        elemento=elemento+", "+lastemperaturas[x]
+    temperaturas_cadena=elemento
+    return temperaturas_cadena
 if __name__=="__main__":
     lista=[]
     print(crear_lista(lista))
@@ -78,4 +84,6 @@ if __name__=="__main__":
     tmp=lista_temp2(temperaturafinalfloat)
     lastemperaturas=temperaturas_finales(temperaturafinalfloat)
     elementos_temperaturas=contar_elementos(temperaturafinalfloat)
+    temperaturastexto=cadena_texto(lastemperaturas)
+
     
