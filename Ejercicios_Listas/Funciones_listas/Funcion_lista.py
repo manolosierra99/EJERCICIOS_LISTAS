@@ -25,21 +25,57 @@ def dividir_lista(lista):
     fase=lista[1]
     temperaturas=lista[2:]
     return id_paciente,fase,temperaturas
-def anadir_temperatura(temperaturas):
+def anadir_temperatura(temperaturas1):
     '''
     Esta funcion se utiliza para anadir una temperatura a la lista de temperaturas.
     '''
     elemento6=float(input("Introduce un valor nuevo de temperaturas:"))
-    temperaturas.append(elemento6)
-    return temperaturas
-def flotante(temperaturas):
+    temperaturas1.append(elemento6)
+    return temperaturas1
+def flotante(temperaturafinal):
     '''
-    Esta funcion se utiliza para cambiar las temperaturas a flotante.
+    Esta funcion se utiliza para cambiar las temperaturas a flotantes.
+    '''
+    temperaturafinal[0]=float(temperaturafinal[0])
+    temperaturafinal[1]=float(temperaturafinal[1])
+    temperaturafinal[2]=float(temperaturafinal[2])
+    return temperaturafinal
+def lista_temp2(temperaturafinalfloat):
+    '''
+    Esta funcion crea una lista de temperaturas para anadirla despues a las temperaturas.
+    '''
+    tmp=[]
+    pregunta=input("Quiere crear una lista nueva de temperaturas para anadirla a la anterior?") #Introduzca si o no
+    while pregunta=="Si" or pregunta=="si":
+        elemento=float(input("Introduzca otro elemento:"))
+        tmp.append(elemento)
+        pregunta=input("Quieres meter mas elementos?")
+    return tmp    
+def temperaturas_finales(temperaturafinalfloat):
+    '''
+    Esta funcion anade la lista tmp a las temperaturas.
+    '''
+    temperaturafinalfloat.append(tmp)
+    return temperaturafinalfloat
+def contar_elementos(lastemperaturas):
+    '''
+    Esta funcion cuenta los elementos en temperaturas.
+    '''
+    l=len(tmp)+len(temperaturafinalfloat)
+    bueno=l-1
+    return bueno
+def cadena_texto(lastemperaturas):
+    '''
+    Esta funcion pasa las temperaturas a cadena de texto.
     '''
     
 if __name__=="__main__":
     lista=[]
     print(crear_lista(lista))
-    id_paciente,fase,temperaturas=dividir_lista(lista)
-    temperaturafinal=anadir_temperatura(lista)
-        
+    id_paciente,fase,temperaturas1=dividir_lista(lista)
+    temperaturafinal=anadir_temperatura(temperaturas1)
+    temperaturafinalfloat=flotante(temperaturafinal)
+    tmp=lista_temp2(temperaturafinalfloat)
+    lastemperaturas=temperaturas_finales(temperaturafinalfloat)
+    elementos_temperaturas=contar_elementos(temperaturafinalfloat)
+    
